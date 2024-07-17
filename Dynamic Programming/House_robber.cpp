@@ -22,7 +22,7 @@ void solve(){
     dp[n - 1] = arr[n - 1];
     dp[n - 2] = max(dp[n - 1], dp[n - 2]);
 
-    for(int i = n - 2; i >= 0; i--){
+    for(int i = n - 3; i >= 0; i--){
         dp[i] = max(arr[i] + dp[i + 2], dp[i+1]);
     }
 
@@ -62,7 +62,7 @@ void alighter(){
     dp[n - 1][1] = arr[n - 1];
     dp[n - 1][0] = 0;
 
-    for(int i = n - 3; i >= 0; i--){
+    for(int i = n - 2; i >= 0; i--){
         dp[i][0] = arr[i] + dp[i+1][0];
         dp[i][1] = max(dp[i+1][0], dp[i+1][1]);
     }
